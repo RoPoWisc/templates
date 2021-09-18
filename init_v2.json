@@ -347,7 +347,7 @@
 				},
 				{
 					"name": "DOMAIN_NAME",
-					"label": "localhost"
+					"set": "localhost"
 				},
 				{
 					"name": "N8N_BASIC_AUTH_USER",
@@ -359,7 +359,7 @@
 				},
 				{
 					"name": "SSL_EMAIL",
-					"label": "user@example.com"
+					"label": "email"
 				}
 			]
 		},
