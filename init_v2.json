@@ -341,6 +341,26 @@
 				"5678/tcp"
 			],
 			"env": [
+				{
+					"name": "DATA_FOLDER",
+					"set": "/usr/src/app/n8n/"
+				},
+				{
+					"name": "DOMAIN_NAME",
+					"label": "localhost"
+				},
+				{
+					"name": "N8N_BASIC_AUTH_USER",
+					"label": "user"
+				},
+				{
+					"name": "N8N_BASIC_AUTH_PASSWORD",
+					"label": "password"
+				},
+				{
+					"name": "SSL_EMAIL",
+					"label": "user@example.com"
+				}
 			]
 		},
 		{
