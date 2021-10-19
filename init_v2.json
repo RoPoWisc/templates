@@ -36,34 +36,25 @@
 					"default": "100",
 					"label": "PGID",
 					"name": "PGID"
-				},
-				{
-					"label": "TZ",
-					"name": "TZ"
-				},
-				{
-					"label": "DATABASE_PASSWORD",
-					"name": "DATABASE_PASSWORD"
-				},
-				{
-					"label": "MYSQL_ROOT_PASSWORD",
-					"name": "MYSQL_ROOT_PASSWORD"
-				},
-				{
-					"label": "PORT",
-					"name": "PORT"
 				}
 			],
-			"logo": "https://raw.githubusercontent.com/novaspirit/pi-hosted/master/pi-hosted_template/images/nextcloud-icon.png",
-			"name": "nextcloud",
+			"name": "nextcloudpi",
 			"note": "The database user is nextcloud and the database is nextcloud_db. The host of the database will be located at the bottom of the DB conotainer in portainer.",
 			"platform": "linux",
-			"repository": {
-				"stackfile": "Template/Stack/nextcloud.yml",
-				"url": "https://github.com/SelfhostedPro/selfhosted_templates"
-			},
-			"title": "Nextcloud",
-			"type": 3
+			"image": "ownyourbits/nextcloudpi",
+			"title": "NextcloudPi",
+			"type": 1,
+			"ports":[
+				"4443:4443/tcp",
+				"8443:443/tcp",
+				"8480:8480/tcp"
+			],
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/ncdata",
+					"container": "/data"
+				}
+			]	
 		},
 		{
 			"categories": [
