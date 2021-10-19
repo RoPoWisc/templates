@@ -18,51 +18,52 @@
 			}]
 		},
 		{
-			"type": 1,
 			"categories": [
-				"Other"
+				"Cloud",
+				"Productivity",
+				"Tools",
+				"Other",
+				"Web"
 			],
-			"title": "Nextcloud",
-			"name": "Nextcloud",
-			"note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/nextcloud/config<br>mkdir -p /volume1/docker/nextcloud/data</p>",
-			"description": "[Nextcloud](https://nextcloud.com/) gives you access to all your files wherever you are. Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices. Through Nextcloud you also access, sync and share your existing data on that FTP drive at the office, a Dropbox or a NAS you have at home.",
-			"platform": "linux",
-			"logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nextcloud-icon.png",
-			"image": "linuxserver/nextcloud:latest",
+			"description": "Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices.",
 			"env": [
 				{
-					"name": "PUID",
+					"default": "1000",
 					"label": "PUID",
-					"default": "1024",
-					"description": "for GroupID"
+					"name": "PUID"
 				},
 				{
-					"name": "PGID",
-					"label": "PGID",
 					"default": "100",
-					"description": "for UserID"
+					"label": "PGID",
+					"name": "PGID"
 				},
 				{
-					"name": "TZ",
 					"label": "TZ",
-					"default": "Europe/Amsterdam",
-					"description": "Specify a timezone to use for example Europe/Amsterdam"
+					"name": "TZ"
+				},
+				{
+					"label": "DATABASE_PASSWORD",
+					"name": "DATABASE_PASSWORD"
+				},
+				{
+					"label": "MYSQL_ROOT_PASSWORD",
+					"name": "MYSQL_ROOT_PASSWORD"
+				},
+				{
+					"label": "PORT",
+					"name": "PORT"
 				}
 			],
-			"ports": [
-				"443:443/tcp"
-			],
-			"volumes": [
-			{
-				"container": "/config",
-				"bind": "/volume1/docker/nextcloud/config"
+			"logo": "https://raw.githubusercontent.com/novaspirit/pi-hosted/master/pi-hosted_template/images/nextcloud-icon.png",
+			"name": "nextcloud",
+			"note": "The database user is nextcloud and the database is nextcloud_db. The host of the database will be located at the bottom of the DB conotainer in portainer.",
+			"platform": "linux",
+			"repository": {
+				"stackfile": "Template/Stack/nextcloud.yml",
+				"url": "https://github.com/SelfhostedPro/selfhosted_templates"
 			},
-			{
-				"container": "/data",
-				"bind": "/volume1/docker/nextcloud/data"
-			}
-			],
-			"restart_policy": "unless-stopped"
+			"title": "Nextcloud",
+			"type": 3
 		},
 		{
 			"categories": [
